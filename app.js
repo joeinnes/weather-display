@@ -99,6 +99,7 @@ function updateView (weather, city, country, temperature, extract, image) {
   document.getElementById('country-or-state').innerText = country
   document.getElementById('location-info').innerText = extract
   document.getElementById('loading').style.display = 'none'
+  document.getElementById('article').style.display = 'block'
 }
 
 function handleError (err) {
