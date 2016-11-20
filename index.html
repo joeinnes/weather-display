@@ -9,9 +9,17 @@
   <title>Weather Display</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div class="sk-folding-cube" id="loading">
+    <div class="sk-cube1 sk-cube"></div>
+    <div class="sk-cube2 sk-cube"></div>
+    <div class="sk-cube4 sk-cube"></div>
+    <div class="sk-cube3 sk-cube"></div>
+  </div>
+  
   <article data-name="article-full-bleed-background" id="article" style="display: none">
     <div class="cf" style="no-repeat center center fixed; background-size: cover;" id="background">
       <div class="fl pa3 pa4-ns bg-white black-70 measure-narrow f3 times">
@@ -26,13 +34,6 @@
       </div>
     </div>
   </article>
-
-  <div class="sk-folding-cube" id="loading">
-    <div class="sk-cube1 sk-cube"></div>
-    <div class="sk-cube2 sk-cube"></div>
-    <div class="sk-cube4 sk-cube"></div>
-    <div class="sk-cube3 sk-cube"></div>
-  </div>
 
   <article class="vh-100 dt w-100 bg-dark-red" style="display: none" id="error">
     <div class="dtc v-mid tc white ph3 ph4-l">
