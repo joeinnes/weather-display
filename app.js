@@ -102,7 +102,7 @@ function updateView (weather, city, country, temperature, extract, image) {
 }
 
 function handleError (err) {
-  document.getElementById('error-message').innerText = 'Technical details: ' + err'
+  document.getElementById('error-message').innerText = 'Technical details: ' + err
   document.getElementById('loading').style.display = 'none'
   document.getElementById('error').style.display = 'block'
 }
