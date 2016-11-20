@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<title> </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+<body>
+  <article data-name="article-full-bleed-background">
+    <div class="cf" style="no-repeat center center fixed; background-size: cover;" id="background">
+      <div class="fl pa3 pa4-ns bg-white black-70 measure-narrow f3 times">
+        <header class="bb b--black-70 pv4">
+          <h3 class="f2 fw7 ttu tracked lh-title mt0 mb3 avenir" id="city"></h3>
+          <h4 class="f3 fw4 i lh-title mt0" id="country-or-state"></h4>
+        </header>
+        <section class="pt5 pb4">
+          <p class="times lh-copy measure f4 mt0" id="location-info">
+          </p>
+        </section>
+      </div>
+    </div>
+  </article>
+
+  <div class="sk-folding-cube" id="loading">
+    <div class="sk-cube1 sk-cube"></div>
+    <div class="sk-cube2 sk-cube"></div>
+    <div class="sk-cube4 sk-cube"></div>
+    <div class="sk-cube3 sk-cube"></div>
+  </div>
+
+  <article class="vh-100 dt w-100 bg-dark-red" style="display: none" id="error">
+    <div class="dtc v-mid tc white ph3 ph4-l">
+      <h1 class="f6 f2-m f-subheadline-l fw6 tc">Uh oh... something went wrong</h1>
+      <p id="error-message">
+      </p>
+    </div>
+  </article>
+  <script src="https://unpkg.com/fetch-jsonp@1.0.2/build/fetch-jsonp.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCegiBSqgUueUvfmQdcYazEtA3jOnlNltE&libraries=places"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
