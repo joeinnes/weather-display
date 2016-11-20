@@ -1,6 +1,6 @@
 {
   "title": "Weather Display",
-  "image": "screenshot.png",
+  "image": "weather_app_ss.png",
   "summary": "Geolocate a user, and display the weather and a short description of the place the user is currently in, along with a picture of a nearby landmark",
   "technologies_used": [
     "es6",
