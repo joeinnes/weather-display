@@ -1,24 +1,25 @@
 {
-  title: 'Weather Display',
-  summary: 'Geolocate a user, and display the weather and a short description of the place the user is currently in, along with a picture of a nearby landmark',
-  technologies_used: [
-    'es6',
-    'geolocation',
-    'promises',
-    'fetch',
-    'dom'
+  "title": "Weather Display",
+  "image": "screenshot.png",
+  "summary": "Geolocate a user, and display the weather and a short description of the place the user is currently in, along with a picture of a nearby landmark",
+  "technologies_used": [
+    "es6",
+    "geolocation",
+    "promises",
+    "fetch",
+    "dom"
   ],
-  credits: [{ 
-    name: 'Google',
-    link: 'https://developers.google.com/places/'
+  "credits": [{ 
+    "name": "Google",
+    "link": "https://developers.google.com/places/"
   }, {
-    name: 'Weather Underground',
-    link: 'https://www.wunderground.com/weather/api/'
+    "name": "Weather Underground",
+    "link": "https://www.wunderground.com/weather/api/"
   }, {
-    name: 'Wikipedia',
-    link: 'https://wikipedia.org'
+    "name": "Wikipedia",
+    "link": "https://wikipedia.org"
   }, {
-    name: 'Tachyons',
-    link: 'https://tachyons.io
+    "name": "Tachyons",
+    "link": "https://tachyons.io
   }
 }
