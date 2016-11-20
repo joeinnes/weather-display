@@ -94,15 +94,15 @@ getLocation()
   })
 
 function updateView (weather, city, country, temperature, extract, image) {
-  document.getElementById('background').style.backgroundImage = `url('${image}')`;
-  document.getElementById('city').innerText = `${weather} in ${city} (${temperature}°C)`;
+  document.getElementById('background').style.backgroundImage = 'url(\'' + image + '\')'
+  document.getElementById('city').innerText = weather + ' in ' + city + ' (' + temperature + '°C)'
   document.getElementById('country-or-state').innerText = country
   document.getElementById('location-info').innerText = extract
   document.getElementById('loading').style.display = 'none'
 }
 
 function handleError (err) {
-  document.getElementById('error-message').innerText = `Technical details: ${err}`;
+  document.getElementById('error-message').innerText = 'Technical details: ' + err'
   document.getElementById('loading').style.display = 'none'
   document.getElementById('error').style.display = 'block'
 }
