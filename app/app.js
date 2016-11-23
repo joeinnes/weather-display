@@ -1,4 +1,7 @@
 /* globals google, fetchJsonp */
+const fetchJsonp = require('fetch-jsonp')
+const fetch = require('whatwg-fetch')
+
 function getLocation () {
   return new Promise((resolve, reject) => {
     if ('geolocation' in navigator) {
