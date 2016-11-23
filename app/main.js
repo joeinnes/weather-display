@@ -1,6 +1,6 @@
 /* globals google, fetchJsonp */
 const fetchJsonp = require('fetch-jsonp')
-const fetch = require('whatwg-fetch')
+require('whatwg-fetch') // Monkey-patch global environment with fetch
 
 function getLocation () {
   return new Promise((resolve, reject) => {
