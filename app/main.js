@@ -18,9 +18,8 @@ function getLocation () {
 
 function getWeather (lat, long) {
   return new Promise((resolve, reject) => {
-    let baseUrl = 'https://api.wunderground.com/api'
-    let apiKey = '06b04f2180c628f8'
-    window.fetch(`${baseUrl}/${apiKey}/conditions/q/${lat},${long}.json`)
+    const apiKey = '24da4957a0a39b21e163f0a4b5a8f82b'
+    window.fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`)
       .then((data) => data.json())
       .then((data) => {
         resolve(data)
@@ -63,11 +62,13 @@ getLocation()
   .then((data) => {
     return Promise.all([getWeather(data[0], data[1]), getPlaceImage(data[0], data[1])])
       .then((data) => {
-        let conditions = data[0].current_observation
+        console.log(data)
+        let conditions = data[0].weather[0].description
         let image = data[1]
-        fetchJsonp('https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=1&prop=extracts&exintro&explaintext&exsentences=5&exlimit=max&redirects=1&gsrsearch=' + conditions.display_location.full)
+        fetchJsonp('https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=1&prop=extracts&exintro&explaintext&exsentences=5&exlimit=max&redirects=1&gsrsearch=' + data[0].name)
           .then((locationInfo) => locationInfo.json())
           .then((locationInfo) => {
+            console.log(locationInfo)
             let resp = ''
             for (let page in locationInfo.query.pages) {
               resp = locationInfo.query.pages[page].extract
@@ -76,10 +77,10 @@ getLocation()
           })
           .then((locationInfo) => {
             updateView(
-              conditions.weather,
-              conditions.display_location.city,
-              conditions.display_location.state_name,
-              conditions.temp_c,
+              conditions,
+              data[0].name,
+              data[0].sys.country,
+              (data[0].main.temp - 272.15).toPrecision(3),
               locationInfo + '\n\nPowered by Weather Underground, Wikipedia, Google, and Tachyons. Loading cubes by Tobias Ahlin.',
               image
             )
